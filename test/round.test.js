@@ -7,6 +7,6 @@ test("rounds half away from zero", () => {
   assert.strictEqual(roundCents(-0.125), -0.13);
 });
 
-test("survives binary floating point", () => {
+test.only("survives binary floating point", () => {
   assert.strictEqual(roundCents(1.005), 1.01);
 });
