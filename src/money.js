@@ -10,3 +10,8 @@ export function split(total, n) {
   const base = Math.floor(cents / n);
   return Array.from({ length: n }, (_, i) => (base + (i < cents % n ? 1 : 0)) / 100);
 }
+
+/** Formats an amount as US dollars, e.g. "$1,234.50". */
+export function formatUsd(amount) {
+  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(amount);
+}
