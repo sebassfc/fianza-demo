@@ -10,3 +10,8 @@ export function split(total, n) {
   const base = Math.floor(cents / n);
   return Array.from({ length: n }, (_, i) => (base + (i < cents % n ? 1 : 0)) / 100);
 }
+
+/** pct percent of amount, rounded to cents. */
+export function percentOf(amount, pct) {
+  return roundCents((amount * pct) / 100);
+}
