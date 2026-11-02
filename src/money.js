@@ -1,6 +1,6 @@
-/** Rounds to whole cents, half away from zero. Shifts the exponent in the string so 1.005 rounds to 1.01. */
+/** Rounds to whole cents. */
 export function roundCents(x) {
-  return Math.sign(x) * Number(`${Math.round(Number(`${Math.abs(x)}e2`))}e-2`);
+  return Math.round(x * 100) / 100;
 }
 
 /** Splits a total into n parts that add up to it exactly; earlier parts take the leftover cents. */
